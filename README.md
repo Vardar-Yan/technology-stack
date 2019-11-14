@@ -9,7 +9,7 @@
 <a name="LFBhV"></a>
 #### Java基础
 
-- 熟读《Java核心技术 卷1》
+- [熟读《Java核心技术 卷1》](./book/Java-Basics/JavaHeXin1.md)
 - 熟读《Java核心技术 卷2》
 - 熟读《Java编程思想》
 - 熟读陆明刚&&劳佳译的《Java8实战》
