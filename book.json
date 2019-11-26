@@ -5,6 +5,7 @@
     "language": "zh-hans",
     "gitbook": "3.2.3",
     "plugins": [
-        "toggle-chapters"
+        "toggle-chapters",
+        "mathjax"
     ]
 }
