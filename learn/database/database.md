@@ -1,5 +1,5 @@
 ### SQL学习
-* [SQL基础教程](/sql-basic-course.md)
+* [SQL基础教程](sql-basic-course.md)
 
 ---
 

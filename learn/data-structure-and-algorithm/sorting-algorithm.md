@@ -42,17 +42,22 @@
 **代码实现：**
 ```Java
 public class Test{
-    public void bubbleSort(Object[] r,int low, int high){
+    public void bubbleSort(int[] r,int low, int high){
         int n = high - low + 1;
         for (int i = 1;i < n; i++){
             for(int j = low; j <= high - i;j++){
-                if()
+                if(r[j] > r[j+1]){
+                    int temp = r[j];
+                    r[j] = r[j+1];
+                    r[j+1] = temp;
+                }
             }
         }
     }
 }
 ```
-
+**空间效率：**使用辅助单元。
+**时间效率：假设待排序的元素个数为 n ，则总共要进行 n-1 趟排序，对 j 个元素的子序列进行一趟起泡排序需要进行 j-1 次关键字比较。由此，起泡排序的总比较次数为 $$\sum_{j=n}^2(j-1) = \frac{n(n-1)}{2}$$ **
 
 
 ---

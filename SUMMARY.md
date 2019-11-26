@@ -1,4 +1,4 @@
-# 目录 测试 测试2
+# 目录
 * [前言](README.md)
 * [工具下载]()
 * [学习](learn/java.md)
@@ -24,6 +24,7 @@
         * [一文读懂MySQL中的引擎]()
         * [一文读懂MySQL的索引]()
         * [Oracle基础教程]()
+        * [数据库SQL优化大总结](learn/database/sql-optimization-summary.md)
     * [设计模式](learn/design-pattern/design-pattern.md)
         * [一文读懂六大设计原则]()
         * [单例模式 - 【创建型】]()
