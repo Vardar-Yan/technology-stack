@@ -70,16 +70,15 @@ select id from t where num = 100*2;
 ```
 
 * 应尽量避免在 where 子句中对字段进行函数操作，这将导致引擎放弃使用索引而进行全表扫描。如：
+
 ```sql
 select id from t where substring(name,1,3) = 'abc';
-
 select id from t where datediff(day,createdate,'2005-11-30') = 0;
 ```
 
 &emsp;应该为：
 ```sql
 select id from t where name like 'abc%';
-
 select id from t where createdate >= '2005-11-30' and createdate < '2005-12-1';
 ```
 
