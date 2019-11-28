@@ -21,23 +21,23 @@
 * 类字段上创建实例（线程安全）
 ```Java
 public class Single{
-  private static Single instance = new Single();
-  private Single(){}
+    private static Single instance = new Single();
+    private Single(){}
 
-  public static Single getInstance(){
-    return instance;
-  }
+    public static Single getInstance(){
+        return instance;
+    }
 }
 ```
 
 * 枚举实现（推荐）（线程安全）
 ```Java
 public enum Single{
-  INSTANCE;
+    INSTANCE;
   
-  public void doSomeThing(){
-    System.out.println("枚举方法实现单例");
-  }
+    public void doSomeThing(){
+        System.out.println("枚举方法实现单例");
+    }
 }
 ```
 
@@ -47,16 +47,16 @@ public enum Single{
 * 非线程安全
 ```Java
 public class Single{
-  private static Single instance;
+    private static Single instance;
   
-  private Single(){};
+    private Single(){};
 
-  public static Single getInstance(){
-    if(instance == null){
+    public static Single getInstance(){
+        if(instance == null){
         instance = new Single();
+        }
+        return instance;
     }
-    return instance;
-  }
 }
 ```
 
@@ -64,37 +64,38 @@ public class Single{
 ```Java
 public class Single{
 
-  private static Single instance;
+    private static Single instance;
   
-  private Single(){};
+    private Single(){};
 
-  public static synchronized Single getInstance(){
-    if(instance == null){
-        instance = new Single();
+    public static synchronized Single getInstance(){
+        if(instance == null){
+            instance = new Single();
+        }
+        return instance;
     }
-    return instance;
-  }
+}
 ```
 
 * 双重检查加锁
 ```Java
 public class Single{
   
-  private volatile static Single instance;
+    private volatile static Single instance;
   
-  private Single(){};
+    private Single(){};
  
-  public static Single getInstace(){
+    public static Single getInstace(){
     
-    if(instance == null){
-      synchronized(Single.class){
         if(instance == null){
-          instance = new Single();
+            synchronized(Single.class){
+                if(instance == null){
+                    instance = new Single();
+                }
+            }
         }
-      }
+        return instance;
     }
-    return instance;
-  }
 }
 ```
 
@@ -103,14 +104,14 @@ public class Single{
 ```Java
 public class Single{
 
-  private static class SingleHolder{
-    private static final Single instance = new Single();
-  }
+    private static class SingleHolder{
+        private static final Single instance = new Single();
+    }
   
-  private Single(){};
+    private Single(){};
   
-  public static final Single getInstance(){
-    return SingleHolder.instance;
-  }
+    public static final Single getInstance(){
+        return SingleHolder.instance;
+    }
 }
 ```
