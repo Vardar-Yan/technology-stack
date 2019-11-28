@@ -1,6 +1,9 @@
 # 目录 
 * [前言](README.md)
-* [工具下载]()
+* [常见工具下载与安装](tool-download/tool-download.md)
+    * [(中文版 | 英文版) Visual Studio Code]()
+    * [IDEA 破解版下载与安装]()
+    * [Sublime 下载]()
 * [学习](learn/java.md)
     * [Java]()
         * [Java基础]()
