@@ -1,4 +1,4 @@
-# <center>单例模式</center>
+# <center>工厂方法模式</center>
 
 ---
 ## 一、介绍
@@ -18,12 +18,19 @@
 **问题描述：** 利用工厂方法实现加减乘除运算。
 
 * 先构建一个运算类，其拥有加减乘除子类
+
 ```Java
-@Data
 public abstract Operation{
     protected double num1;
     protected double num2;
     public abstract double getResult();
+
+    public void setNum1(double num1){
+        this.num1 = num1;
+    }
+    public void setNum2(double num2){
+        this.num2 = num2;
+    }
 }
 
 public class OperationAdd extends Operation{
